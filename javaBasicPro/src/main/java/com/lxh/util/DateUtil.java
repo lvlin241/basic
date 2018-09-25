@@ -9,6 +9,12 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtil {
 
+    /**
+     * 获取指定格式的日期
+     * @param pattern 日期格式
+     * @return
+     */
+    @SuppressWarnings("JavaDoc")
     private static String getCurrentDate(String pattern){
         LocalDateTime date = LocalDateTime.now();
         return date.format(DateTimeFormatter.ofPattern(pattern));
