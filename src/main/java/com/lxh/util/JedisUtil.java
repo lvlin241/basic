@@ -6,8 +6,15 @@ import java.util.Set;
 
 import redis.clients.jedis.Jedis;
 
+/**
+ * redis 工具读取工具类
+ * @author Administrator
+ *
+ */
 public class JedisUtil {
-	
+	/**
+	 * Jedis 工具
+	 */
 	private static Jedis jedis = null;
 	private static String host = null;
 	private static int port ;
@@ -20,13 +27,21 @@ public class JedisUtil {
 		}
 		return jedis;
 	}
-
+	
+	/**
+	 * 关闭
+	 */
 	private static void close() {
 		if ( jedis.isConnected() ) {
 			jedis.close();
 		}
 	}
 	
+	/**
+	 * 判断Redis是否存在某个key
+	 * @param key
+	 * @return
+	 */
 	private static boolean judgeKeyIsExist(String key) {
 		return jedis.exists(key);
 	}

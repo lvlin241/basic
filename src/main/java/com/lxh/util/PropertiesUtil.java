@@ -5,14 +5,27 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * Properties文件读取工具类
+ * @author Administrator
+ *
+ */
 public class PropertiesUtil {
-	
+	/**
+	 *  配置文件
+	 */
 	private static Properties prop = null;
 	
+	/**
+	 * 类加载时初始化(加载)配置文件
+	 */
 	static {
 		init();
 	}
 	
+	/**
+	 * 加载配置文件
+	 */
 	private static void init () {
 		if ( null == prop ) {
 			prop = new Properties();
@@ -29,6 +42,11 @@ public class PropertiesUtil {
 		}
 	}
 	
+	/**
+	 * 通过指定的key获取value
+	 * @param key 
+	 * @return
+	 */
 	public static Object getPropValue (String key) {
 		Object res = null;
 		if ( StringUtil.isNotBlank(key) ) {
