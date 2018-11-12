@@ -15,6 +15,9 @@ public class ThreadWaitAndNotifyDemo {
 		Thread inputThread = new Thread(new InputResource(res));
 		// 输出线程
 		Thread outputThread = new Thread(new OutputResource(res));
+		// 设置线程名称
+		inputThread.setName("【inputThread】");
+		outputThread.setName("【outputThread】");
 		// 启动线程
 		inputThread.start();
 		outputThread.start();
@@ -88,9 +91,11 @@ class InputResource implements Runnable{
 				if ( (tmpFlag % 2) == 0 ) {
 					res.setName("煤炭");
 					res.setManufacturer("大同");
+					System.out.println(Thread.currentThread().getName() + " 创建资源 ：  " + res.getName() +" , "+ res.getManufacturer());
 				}else {
 					res.setName("gold");
 					res.setManufacturer("Russion");
+					System.out.println(Thread.currentThread().getName() + " 创建资源 ：  " + res.getName() +" , "+ res.getManufacturer());
 				}
 				// 标识资源创建完毕
 				res.setFlag(true);
@@ -126,7 +131,7 @@ class OutputResource implements Runnable{
 						e.printStackTrace();
 					}
 				} 
-				System.out.println("【消费】："+res.getName() +" , " + res.getManufacturer());
+				System.out.println(Thread.currentThread().getName() + "消费资源： "+res.getName() +" , " + res.getManufacturer());
 				// 消费完毕标识资源
 				res.setFlag(false);
 				// 唤醒资源创建者  创建资源
