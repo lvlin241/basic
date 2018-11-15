@@ -2,17 +2,18 @@ package com.lxh.util;
 
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
- * Map ¹¤¾ßÀà
+ * Map å·¥å…·ç±»
  */
 public class MapUtil {
 
     /**
-     * »ñÈ¡Á½¸ömapÖĞ¹²Í¬µÄkey
-     * @param map1 ²ÎÊı1
-     * @param map2 ²ÎÊı2
-     * @return Á½¸ömapÖĞ¹²Í¬µÄkeyÁĞ±í
+     * è·å–ä¸¤ä¸ªmapä¸­å…±åŒçš„key
+     * @param map1 å‚æ•°1
+     * @param map2 å‚æ•°2
+     * @return ä¸¤ä¸ªmapä¸­å…±åŒçš„keyåˆ—è¡¨
      */
     private static List<String> diffCommonKey (Map<String,Integer> map1, Map<String,Integer> map2){
         if ( null == map1 || null == map2 )
@@ -37,10 +38,10 @@ public class MapUtil {
         return res;
     }
     /**
-     * ºÏ²¢ map
-     * @param map1 ²ÎÊı1
-     * @param map2 ²ÎÊı2
-     * @return ºÏ²¢ºóµÄmap
+     * åˆå¹¶ map
+     * @param map1 å‚æ•°1
+     * @param map2 å‚æ•°2
+     * @return åˆå¹¶åçš„map
      */
     private static Map<String,Integer> addMap(Map<String,Integer> map1,Map<String,Integer> map2){
         Map<String,Integer> res = new HashMap<String,Integer>(1);
@@ -76,6 +77,30 @@ public class MapUtil {
         return res;
     }
 
+    /**
+     *  éå†map
+     * @param map
+     * @return
+     */
+    private static StringBuffer iteatorMap(Map<String,String> map) {
+    	// è¿”å›ç»“æœ
+    	StringBuffer sb = new StringBuffer();
+    	if ( null == map ) {
+    		return sb;
+    	}
+    	// éå†
+    	sb.append("{");
+    	for ( Entry<String, String> es : map.entrySet() ) {
+    		sb.append(es.getKey() + ":"+ es.getValue() +"; ");
+    	}
+    	// æœ‰å€¼å»é™¤æœ€åä¸€ä¸ªåˆ†å·
+    	if ( sb.length() > 1 ) {
+    		sb.delete(sb.length()-1, sb.length());
+    	}
+    	sb.append("}");
+    	return sb;
+    }
+    
     public static void main(String[] args){
         Map<String,Integer> map1 = new HashMap<String,Integer>(3);
         map1.put("a",1);
@@ -87,5 +112,12 @@ public class MapUtil {
         System.out.println(diffCommonKey(map1,map2).toString());
         Map<String,Integer> map = addMap(map1,map2);
         System.out.println(map);
+        
+        // éå†map,æŒ‰æŒ‡å®šæ ¼å¼è¾“å‡º
+        Map<String,String> infoMap = new HashMap<String,String>(3);
+        infoMap.put("name","Tom");
+        infoMap.put("nation","earth");
+        infoMap.put("hobby","running");
+        System.out.println(iteatorMap(infoMap));
     }
 }
