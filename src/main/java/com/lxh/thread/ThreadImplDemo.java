@@ -13,7 +13,7 @@ import java.util.concurrent.FutureTask;
  * 区别：
  * 1、简单，但只能继承一个类
  * 2、可实现多个接口，实现run方法，但无返回结果且不能抛出异常
- * 3、可实现多个接口，实现call方法，又返回结果，可以操作线程
+ * 3、可实现多个接口，实现call方法，有返回结果，可以与FutureTask、ExecutorService结合操作线程
  */
 public class ThreadImplDemo {
 
