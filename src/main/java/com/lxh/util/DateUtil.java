@@ -11,13 +11,13 @@ import java.time.format.DateTimeFormatter;
 
 /**
  *  jdk:1.8
- * ÈÕÆÚ¹¤¾ßÀà
+ * æ—¥æœŸå·¥å…·ç±»
  */
 public class DateUtil {
 
     /**
-     * »ñÈ¡Ö¸¶¨¸ñÊ½µÄÈÕÆÚ
-     * @param pattern ÈÕÆÚ¸ñÊ½
+     * è·å–æŒ‡å®šæ ¼å¼çš„æ—¥æœŸ
+     * @param pattern æ—¥æœŸæ ¼å¼
      * @return
      */
     private static String getCurrentDate(String pattern){
@@ -26,33 +26,33 @@ public class DateUtil {
     }
 	
 	/**
-	 * »ñµÃÊ±¼ä´Á
+	 * è·å¾—æ—¶é—´æˆ³
 	 * @param :
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ21ÈÕÏÂÎç2:20:48
+	 * @date:2018å¹´9æœˆ21æ—¥ä¸‹åˆ2:20:48
 	 */
 	public static String getNowStamp(){
 		return String.valueOf(Timestamp.valueOf(LocalDateTime.now()).getTime());
 	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°ÈÕÆÚÇ°Ò»ÌìµÄÈÕÆÚ
-	 * @param preDayNum: µ±Ç°ÈÕÆÚÖ®Ç°µÚ¼¸Ìì
+	 * è·å–å½“å‰æ—¥æœŸå‰ä¸€å¤©çš„æ—¥æœŸ
+	 * @param preDayNum: å½“å‰æ—¥æœŸä¹‹å‰ç¬¬å‡ å¤©
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ26ÈÕÏÂÎç5:24:36
+	 * @date:2018å¹´9æœˆ26æ—¥ä¸‹åˆ5:24:36
 	 */
 	public static String getPrveDay(int preDayNum){
 		String res = LocalDateTime.now().minusDays(preDayNum).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
 		return res;
 	}
 	/**
-	 * »ñÈ¡¸ø¶¨ÈÕÆÚÇ°¼¸ÌìµÄÈÕÆÚyyyyMMdd
-	 * @param preDayNum: µ±Ç°ÈÕÆÚÖ®Ç°µÚ¼¸Ìì
+	 * è·å–ç»™å®šæ—¥æœŸå‰å‡ å¤©çš„æ—¥æœŸyyyyMMdd
+	 * @param preDayNum: å½“å‰æ—¥æœŸä¹‹å‰ç¬¬å‡ å¤©
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ26ÈÕÏÂÎç5:24:36
+	 * @date:2018å¹´9æœˆ26æ—¥ä¸‹åˆ5:24:36
 	 */
 	public static String getPrveDay(String day,int preDayNum){
 		String res = LocalDate.parse(day, DateTimeFormatter.ofPattern("yyyyMMdd")).minusDays(preDayNum).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -60,11 +60,11 @@ public class DateUtil {
 	}
 	
 	/**
-	 * Ê±¼ä´Á×ª»¯ÎªÊ±¼ä
+	 * æ—¶é—´æˆ³è½¬åŒ–ä¸ºæ—¶é—´
 	 * @param:
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ28ÈÕÉÏÎç11:15:56
+	 * @date:2018å¹´9æœˆ28æ—¥ä¸Šåˆ11:15:56
 	 */
 	public static String convertTimestampToDate(long timeStamp,String timePattern){
 		LocalDateTime ldt = LocalDateTime.ofEpochSecond(timeStamp/1000, 0, ZoneOffset.ofHours(8));
@@ -72,11 +72,11 @@ public class DateUtil {
 	}
 	
 	/**
-	 * »ñÈ¡»ñÈ¡Ö¸¶¨Ç°ÈÕÆÚÇ°Ò»ÌìµÄÈÕÆÚ
+	 * è·å–è·å–æŒ‡å®šå‰æ—¥æœŸå‰ä¸€å¤©çš„æ—¥æœŸ
 	 * @param:
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ30ÈÕÏÂÎç4:48:30
+	 * @date:2018å¹´9æœˆ30æ—¥ä¸‹åˆ4:48:30
 	 */
 	public static String getPrveDay(LocalDateTime ldt,int preDayNum){
 		String res = ldt.minusDays(preDayNum).format(DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -84,11 +84,11 @@ public class DateUtil {
 	}
 	
 	/**
-	 * ×ª»»Ê±¼ä´ÁÎªyyyyMMdd×Ö·û´®
-	 * @param timeStamp: Ê±¼ä´Á
+	 * è½¬æ¢æ—¶é—´æˆ³ä¸ºyyyyMMddå­—ç¬¦ä¸²
+	 * @param timeStamp: æ—¶é—´æˆ³
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê10ÔÂ12ÈÕÏÂÎç7:43:33
+	 * @date:2018å¹´10æœˆ12æ—¥ä¸‹åˆ7:43:33
 	 */
 	public static String convertTimestampToString(long timeStamp) {
 		LocalDateTime ldt = convertTimeStampToLocalDateTime(timeStamp);
@@ -96,11 +96,11 @@ public class DateUtil {
 	}
 	
 	/**
-	 * Ê±¼ä´Á×ª»»ÎªLocalDateTime
+	 * æ—¶é—´æˆ³è½¬æ¢ä¸ºLocalDateTime
 	 * @param:
 	 * @return:
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ30ÈÕÏÂÎç4:46:40
+	 * @date:2018å¹´9æœˆ30æ—¥ä¸‹åˆ4:46:40
 	 */
 	public static LocalDateTime convertTimeStampToLocalDateTime(long timeStamp){
 		LocalDateTime ldt = LocalDateTime.ofEpochSecond(timeStamp/1000, 0, ZoneOffset.ofHours(8));
@@ -108,15 +108,15 @@ public class DateUtil {
 	}
 	
 	/**
-	 * ¼ÆËãÊ±¼ä´ÁÖ®¼äµÄ¼ä¸ô
-	 * @param start: ¿ªÊ¼Ê±¼ä´Á
-	 * @param end: ½áÊøÊ±¼ä´Á
-	 * @return:¼ä¸ôÌìÊı
+	 * è®¡ç®—æ—¶é—´æˆ³ä¹‹é—´çš„é—´éš”
+	 * @param start: å¼€å§‹æ—¶é—´æˆ³
+	 * @param end: ç»“æŸæ—¶é—´æˆ³
+	 * @return:é—´éš”å¤©æ•°
 	 * @author: LXH
-	 * @date:2018Äê9ÔÂ30ÈÕÏÂÎç3:34:41
+	 * @date:2018å¹´9æœˆ30æ—¥ä¸‹åˆ3:34:41
 	 */
 	public static long calculateIntervalOfDay(long start,long end){
-		// Ä¬ÈÏÊ±Çø
+		// é»˜è®¤æ—¶åŒº
 		ZoneId zone = ZoneId.systemDefault();
 		LocalDateTime t1 = LocalDateTime.ofInstant(Instant.ofEpochMilli(start), zone);
 		LocalDateTime t2 = LocalDateTime.ofInstant(Instant.ofEpochMilli(end), zone);
