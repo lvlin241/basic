@@ -25,6 +25,7 @@ public class ThreadImplDemo {
 		FutureTask<String> ft3 = new FutureTask<String>(ctd);
 		FutureTask<String> ft4 = new FutureTask<String>(ctd);
 		ExecutorService es = Executors.newFixedThreadPool(4);
+		Executors.newCachedThreadPool();
 		es.submit(ft1);
 		es.submit(ft2);
 		es.submit(ft3);

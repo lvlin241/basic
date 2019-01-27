@@ -20,7 +20,7 @@ public class DateUtil {
      * @param pattern 日期格式
      * @return
      */
-    private static String getCurrentDate(String pattern){
+    public static String getCurrentDate(String pattern){
         LocalDateTime date = LocalDateTime.now();
         return date.format(DateTimeFormatter.ofPattern(pattern));
     }
