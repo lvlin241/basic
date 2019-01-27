@@ -7,13 +7,13 @@ import java.util.Set;
 import redis.clients.jedis.Jedis;
 
 /**
- * redis ¹¤¾ß¶ÁÈ¡¹¤¾ßÀà
+ * redis å·¥å…·è¯»å–å·¥å…·ç±»
  * @author Administrator
  *
  */
 public class JedisUtil {
 	/**
-	 * Jedis ¹¤¾ß
+	 * Jedis å·¥å…·
 	 */
 	private static Jedis jedis = null;
 	private static String host = null;
@@ -29,7 +29,7 @@ public class JedisUtil {
 	}
 	
 	/**
-	 * ¹Ø±Õ
+	 * å…³é—­
 	 */
 	private static void close() {
 		if ( jedis.isConnected() ) {
@@ -38,7 +38,7 @@ public class JedisUtil {
 	}
 	
 	/**
-	 * ÅĞ¶ÏRedisÊÇ·ñ´æÔÚÄ³¸ökey
+	 * åˆ¤æ–­Redisæ˜¯å¦å­˜åœ¨æŸä¸ªkey
 	 * @param key
 	 * @return
 	 */
