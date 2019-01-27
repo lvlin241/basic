@@ -6,25 +6,25 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * PropertiesÎÄ¼ş¶ÁÈ¡¹¤¾ßÀà
+ * Propertiesæ–‡ä»¶è¯»å–å·¥å…·ç±»
  * @author Administrator
  *
  */
 public class PropertiesUtil {
 	/**
-	 *  ÅäÖÃÎÄ¼ş
+	 *  é…ç½®æ–‡ä»¶
 	 */
 	private static Properties prop = null;
 	
 	/**
-	 * Àà¼ÓÔØÊ±³õÊ¼»¯(¼ÓÔØ)ÅäÖÃÎÄ¼ş
+	 * ç±»åŠ è½½æ—¶åˆå§‹åŒ–(åŠ è½½)é…ç½®æ–‡ä»¶
 	 */
 	static {
 		init();
 	}
 	
 	/**
-	 * ¼ÓÔØÅäÖÃÎÄ¼ş
+	 * åŠ è½½é…ç½®æ–‡ä»¶
 	 */
 	private static void init () {
 		if ( null == prop ) {
@@ -43,7 +43,7 @@ public class PropertiesUtil {
 	}
 	
 	/**
-	 * Í¨¹ıÖ¸¶¨µÄkey»ñÈ¡value
+	 * é€šè¿‡æŒ‡å®šçš„keyè·å–value
 	 * @param key 
 	 * @return
 	 */
