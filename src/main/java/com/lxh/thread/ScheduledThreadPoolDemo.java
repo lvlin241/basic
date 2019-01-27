@@ -1,13 +1,10 @@
 package com.lxh.thread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import com.lxh.util.DateUtil;
-import com.sun.corba.se.impl.orbutil.closure.Future;
 
 /**
  * 线程池4种
@@ -24,6 +21,7 @@ public class ScheduledThreadPoolDemo {
 	 * 延迟3s执行
 	 * @param stp
 	 */
+	@SuppressWarnings("unused")
 	private static void delayExecute(ScheduledThreadPoolExecutor stp){
 		stp.schedule(new Runnable(){
 			public void run() {
