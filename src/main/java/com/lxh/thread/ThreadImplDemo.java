@@ -47,6 +47,7 @@ public class ThreadImplDemo {
 
 }
 
+@SuppressWarnings("rawtypes")
 class CreateThreadDemo implements Callable{
 	private int count = 0;
 	public String call() throws Exception {
