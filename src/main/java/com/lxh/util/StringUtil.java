@@ -19,6 +19,16 @@ public class StringUtil {
 	}
 	
 	/**
+	 * 判断字符串是否为空
+	 * @param key
+	 * @return
+	 */
+	public static boolean isBlank(String key) {
+		return null==key||"".equals(key) ? true : false ;
+	}
+	
+	
+	/**
 	 * 根据关键字之间的空格分割(常用于   检索内容  分割)
 	 * @param keywords
 	 * @return
