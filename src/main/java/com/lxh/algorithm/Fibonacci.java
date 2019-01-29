@@ -2,7 +2,7 @@ package com.lxh.algorithm;
 
 /**
  * 斐波那契数列
- * @author Administrator
+ * @author lvlin
  * 说明:
  * 标号: 0 1 2 3 4 5 6  7  8
  * 序列: 1 1 2 3 5 8 13 21 34  ... 
@@ -10,10 +10,10 @@ package com.lxh.algorithm;
 public class Fibonacci {
 	/**
 	 * 根据"斐波那契数列位置获取该位置的值"
-	 * @param n  斐波那契数列位置
+	 * @param n  斐波那契数列第n个位置
 	 * @return
 	 */
-	public static int getFibonacci(int n){
+	public static long getFibonacci(int n){
 		if ( 0 > n ) {
 			return 0;
 		}
@@ -27,6 +27,5 @@ public class Fibonacci {
 		System.out.println(getFibonacci(-6));
 		System.out.println(getFibonacci(2));
 		System.out.println(getFibonacci(7));
-		System.out.println(getFibonacci(80));
 	}
 }
